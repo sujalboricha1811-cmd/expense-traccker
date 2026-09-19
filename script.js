@@ -845,3 +845,60 @@ renderAllTransactions();
 renderReceived();
 renderSpent();
 updateCards();
+
+const exportbtn=document.querySelector("#exportbtn")
+
+exportbtn.addEventListener("click",()=>{
+    if(transactions.length===0){
+        return;
+    }
+
+    const data=JSON.stringify(transactions,null,2)
+
+    const blob=new Blob([data],{
+        type:"application/json"
+    })
+
+    const url=URL.createObjectURL(blob)
+
+    const link=document.createElement("a")
+    link.href=url
+    link.download="sujal.json"
+
+    link.click()
+
+    URL.revokeObjectURL(url)
+})
+
+const importbtn=document.querySelector("#importbtn")
+const importfile=document.querySelector("#import-file")
+
+importbtn.addEventListener("click",()=>{
+    importfile.click();
+})
+
+importfile.addEventListener("change",()=>{
+    const file=importfile.files[0];
+
+    if(!file)return;
+
+    const reader=new FileReader();
+
+    reader.onload=()=>{
+        const data=JSON.parse(reader.result )
+
+        transactions=data
+
+        localStorage.setItem("transactions",JSON.stringify(transactions))
+
+            renderTransactions();
+    renderAllTransactions();
+    renderReceived();
+    renderSpent();
+    updateCards();
+
+}
+reader.readAsText(file)
+
+})
+    

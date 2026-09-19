@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -13,617 +12,335 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
-</head>
+  </head>
 
-
-<body>
-
+  <body>
     <div class="app">
-
-        <!-- =========================
+      <!-- =========================
              SIDEBAR
         ========================== -->
 
-        <aside class="sidebar">
+      <aside class="sidebar">
+        <!-- LOGO -->
 
-            <!-- LOGO -->
+        <div class="logo">
+          <img src="logo.svg" alt="Expense Tracker Logo" />
 
-            <div class="logo">
+          <h1>Expense Tracker</h1>
+        </div>
 
-                <img
-                    src="logo.svg"
-                    alt="Expense Tracker Logo"
-                />
+        <!-- SIDEBAR MENU -->
 
-                <h1>Expense Tracker</h1>
+        <div class="sidebar-menu">
+          <!-- DASHBOARD -->
 
-            </div>
+          <div class="sidemenu-content">
+            <img class="menu-img" src="dashboard.png" alt="Dashboard" />
 
+            <button class="btn" id="dashboardBtn" type="button">
+              Dashboard
+            </button>
+          </div>
 
-            <!-- SIDEBAR MENU -->
+          <!-- TRANSACTIONS -->
 
-            <div class="sidebar-menu">
+          <div class="sidemenu-content">
+            <img class="menu-img" src="transaction.png" alt="Transactions" />
 
-                <!-- DASHBOARD -->
+            <button class="btn" id="side-transactionbtn" type="button">
+              Transactions
+            </button>
+          </div>
 
-                <div class="sidemenu-content">
+          <!-- RECEIVED -->
 
-                    <img
-                        class="menu-img"
-                        src="dashboard.png"
-                        alt="Dashboard"
-                    />
+          <div class="sidemenu-content">
+            <img class="menu-img" src="received.png" alt="Received" />
 
-                    <button
-                        class="btn"
-                        id="dashboardBtn"
-                        type="button"
-                    >
-                        Dashboard
-                    </button>
+            <button class="btn" id="side-receivedbtn" type="button">
+              Received
+            </button>
+          </div>
 
-                </div>
+          <!-- SPENT -->
 
+          <div class="sidemenu-content">
+            <img class="menu-img" src="spent.png" alt="Spent" />
 
-                <!-- TRANSACTIONS -->
+            <button class="btn" id="side-spentbtn" type="button">Spent</button>
+          </div>
 
-                <div class="sidemenu-content">
+          <!-- PROFILE -->
 
-                    <img
-                        class="menu-img"
-                        src="transaction.png"
-                        alt="Transactions"
-                    />
+          <div class="profile">
+            <div class="profile-circle">S</div>
+            <button class="btn" id="exportbtn" type="button">export</button>
 
-                    <button
-                        class="btn"
-                        id="side-transactionbtn"
-                        type="button"
-                    >
-                        Transactions
-                    </button>
+            <button class="btn" id="importbtn" type="button">import</button>
+            <input type="file" id="import-file" accept=".json" hidden />
+            <h2>Free</h2>
+          </div>
+        </div>
+      </aside>
 
-                </div>
-
-
-                <!-- RECEIVED -->
-
-                <div class="sidemenu-content">
-
-                    <img
-                        class="menu-img"
-                        src="received.png"
-                        alt="Received"
-                    />
-
-                    <button
-                        class="btn"
-                        id="side-receivedbtn"
-                        type="button"
-                    >
-                        Received
-                    </button>
-
-                </div>
-
-
-                <!-- SPENT -->
-
-                <div class="sidemenu-content">
-
-                    <img
-                        class="menu-img"
-                        src="spent.png"
-                        alt="Spent"
-                    />
-
-                    <button
-                        class="btn"
-                        id="side-spentbtn"
-                        type="button"
-                    >
-                        Spent
-                    </button>
-
-                </div>
-
-
-                <!-- PROFILE -->
-
-                <div class="profile">
-
-                    <div class="profile-circle">
-                        S
-                    </div>
-
-                    <h2>Free</h2>
-
-                </div>
-
-            </div>
-
-        </aside>
-
-
-
-        <!-- =========================
+      <!-- =========================
              MAIN CONTENT
         ========================== -->
 
-        <main class="main-content">
-
-
-            <!-- ==================================================
+      <main class="main-content">
+        <!-- ==================================================
                  DASHBOARD
             =================================================== -->
 
-            <div class="dashboard-view">
+        <div class="dashboard-view">
+          <h2 class="welcome">Welcome back!</h2>
 
-                <h2 class="welcome">
-                    Welcome back!
-                </h2>
+          <!-- SUMMARY CARDS -->
 
+          <div class="cards">
+            <!-- BALANCE -->
 
-                <!-- SUMMARY CARDS -->
+            <div class="card">
+              <div class="top-card">
+                <h3>Total Balance</h3>
 
-                <div class="cards">
+                <span> 💰 </span>
+              </div>
 
-
-                    <!-- BALANCE -->
-
-                    <div class="card">
-
-                        <div class="top-card">
-
-                            <h3>
-                                Total Balance
-                            </h3>
-
-                            <span>
-                                💰
-                            </span>
-
-                        </div>
-
-                        <h2 class="balance">
-                            ₹0
-                        </h2>
-
-                    </div>
-
-
-                    <!-- INCOME -->
-
-                    <div class="card">
-
-                        <div class="top-card">
-
-                            <h3>
-                                Total Income
-                            </h3>
-
-                            <span>
-                                📈
-                            </span>
-
-                        </div>
-
-                        <h2 class="income">
-                            ₹0
-                        </h2>
-
-                    </div>
-
-
-                    <!-- EXPENSE -->
-
-                    <div class="card">
-
-                        <div class="top-card">
-
-                            <h3>
-                                Total Spent
-                            </h3>
-
-                            <span>
-                                📉
-                            </span>
-
-                        </div>
-
-                        <h2 class="expense">
-                            ₹0
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- RECENT TRANSACTIONS -->
-
-                <section class="transactions">
-
-                    <!-- NAVIGATION -->
-
-                    <div class="nav">
-
-                        <h3>
-                            Recent Transactions
-                        </h3>
-
-
-                        <select id="nav-select">
-
-                            <option value="All">
-                                All
-                            </option>
-
-                            <option value="Income">
-                                Income
-                            </option>
-
-                            <option value="Expense">
-                                Expense
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- TRANSACTION CARDS -->
-
-                    <div class="tra-cards"></div>
-
-                </section>
-
+              <h2 class="balance">₹0</h2>
             </div>
 
+            <!-- INCOME -->
 
+            <div class="card">
+              <div class="top-card">
+                <h3>Total Income</h3>
 
-            <!-- ==================================================
+                <span> 📈 </span>
+              </div>
+
+              <h2 class="income">₹0</h2>
+            </div>
+
+            <!-- EXPENSE -->
+
+            <div class="card">
+              <div class="top-card">
+                <h3>Total Spent</h3>
+
+                <span> 📉 </span>
+              </div>
+
+              <h2 class="expense">₹0</h2>
+            </div>
+          </div>
+
+          <!-- RECENT TRANSACTIONS -->
+
+          <section class="transactions">
+            <!-- NAVIGATION -->
+
+            <div class="nav">
+              <h3>Recent Transactions</h3>
+
+              <select id="nav-select">
+                <option value="All">All</option>
+
+                <option value="Income">Income</option>
+
+                <option value="Expense">Expense</option>
+              </select>
+            </div>
+
+            <!-- TRANSACTION CARDS -->
+
+            <div class="tra-cards"></div>
+          </section>
+        </div>
+
+        <!-- ==================================================
                  ALL TRANSACTIONS PAGE
             =================================================== -->
 
-            <div class="side-transaction">
+        <div class="side-transaction">
+          <h2>All Transactions</h2>
 
-                <h2>
-                    All Transactions
-                </h2>
+          <div class="all-transactions-list"></div>
+        </div>
 
-
-                <div class="all-transactions-list"></div>
-
-            </div>
-
-
-
-            <!-- ==================================================
+        <!-- ==================================================
                  RECEIVED PAGE
             =================================================== -->
 
-            <div class="money-page received-page">
+        <div class="money-page received-page">
+          <!-- HEADER -->
 
+          <div class="money-page-header">
+            <div>
+              <p class="page-label">INCOME OVERVIEW</p>
 
-                <!-- HEADER -->
+              <h2>Received Money</h2>
 
-                <div class="money-page-header">
-
-                    <div>
-
-                        <p class="page-label">
-                            INCOME OVERVIEW
-                        </p>
-
-                        <h2>
-                            Received Money
-                        </h2>
-
-                        <p class="page-subtitle">
-                            Track all the money you have received.
-                        </p>
-
-                    </div>
-
-
-                    <div class="page-icon received-icon">
-                        💰
-                    </div>
-
-                </div>
-
-
-
-                <!-- SUMMARY -->
-
-                <div class="money-summary">
-
-                    <div class="money-summary-card">
-
-                        <span>
-                            Total Received
-                        </span>
-
-                        <h3>
-                            ₹0
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- RECEIVED LIST -->
-
-                <div class="money-list-box">
-
-
-                    <div class="money-list-header">
-
-                        <h3>
-                            Received Transactions
-                        </h3>
-
-                        <p>
-                            Your income history
-                        </p>
-
-                    </div>
-
-
-                    <div class="money-list"></div>
-
-                </div>
-
+              <p class="page-subtitle">
+                Track all the money you have received.
+              </p>
             </div>
 
+            <div class="page-icon received-icon">💰</div>
+          </div>
 
+          <!-- SUMMARY -->
 
-            <!-- ==================================================
+          <div class="money-summary">
+            <div class="money-summary-card">
+              <span> Total Received </span>
+
+              <h3>₹0</h3>
+            </div>
+          </div>
+
+          <!-- RECEIVED LIST -->
+
+          <div class="money-list-box">
+            <div class="money-list-header">
+              <h3>Received Transactions</h3>
+
+              <p>Your income history</p>
+            </div>
+
+            <div class="money-list"></div>
+          </div>
+        </div>
+
+        <!-- ==================================================
                  SPENT PAGE
             =================================================== -->
 
-            <div class="money-page spent-page">
+        <div class="money-page spent-page">
+          <!-- HEADER -->
 
+          <div class="money-page-header">
+            <div>
+              <p class="page-label">EXPENSE OVERVIEW</p>
 
-                <!-- HEADER -->
+              <h2>Spent Money</h2>
 
-                <div class="money-page-header">
-
-                    <div>
-
-                        <p class="page-label">
-                            EXPENSE OVERVIEW
-                        </p>
-
-                        <h2>
-                            Spent Money
-                        </h2>
-
-                        <p class="page-subtitle">
-                            Track where your money has been spent.
-                        </p>
-
-                    </div>
-
-
-                    <div class="page-icon spent-icon">
-                        📉
-                    </div>
-
-                </div>
-
-
-
-                <!-- SUMMARY -->
-
-                <div class="money-summary">
-
-                    <div class="money-summary-card">
-
-                        <span>
-                            Total Spent
-                        </span>
-
-                        <h3>
-                            ₹0
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- SPENT LIST -->
-
-                <div class="money-list-box">
-
-
-                    <div class="money-list-header">
-
-                        <h3>
-                            Expense Transactions
-                        </h3>
-
-                        <p>
-                            Your spending history
-                        </p>
-
-                    </div>
-
-
-                    <div class="money-list"></div>
-
-                </div>
-
+              <p class="page-subtitle">
+                Track where your money has been spent.
+              </p>
             </div>
 
-        </main>
+            <div class="page-icon spent-icon">📉</div>
+          </div>
 
+          <!-- SUMMARY -->
+
+          <div class="money-summary">
+            <div class="money-summary-card">
+              <span> Total Spent </span>
+
+              <h3>₹0</h3>
+            </div>
+          </div>
+
+          <!-- SPENT LIST -->
+
+          <div class="money-list-box">
+            <div class="money-list-header">
+              <h3>Expense Transactions</h3>
+
+              <p>Your spending history</p>
+            </div>
+
+            <div class="money-list"></div>
+          </div>
+        </div>
+      </main>
     </div>
-
-
 
     <!-- ==================================================
          ADD TRANSACTION BUTTON
     =================================================== -->
 
-    <button
-        class="add"
-        id="add-btn"
-        type="button"
-    >
-        +
-    </button>
-
-
+    <button class="add" id="add-btn" type="button">+</button>
 
     <!-- ==================================================
          TRANSACTION MODAL
     =================================================== -->
 
-    <div
-        class="modal-overlay"
-        id="modalOverlay"
-    >
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="transaction-modal">
+        <!-- CLOSE BUTTON -->
 
-        <div class="transaction-modal">
+        <button class="close-btn" id="closeBtn" type="button">&times;</button>
 
+        <!-- STEP 1: TYPE SELECTION -->
 
-            <!-- CLOSE BUTTON -->
+        <div class="type-selection">
+          <h2>What do you want to add?</h2>
 
-            <button
-                class="close-btn"
-                id="closeBtn"
-                type="button"
-            >
-                &times;
-            </button>
+          <button type="button" class="type-btn" id="incomeBtn">
+            💰 Income
+          </button>
 
-
-
-            <!-- STEP 1: TYPE SELECTION -->
-
-            <div class="type-selection">
-
-                <h2>
-                    What do you want to add?
-                </h2>
-
-
-                <button
-                    type="button"
-                    class="type-btn"
-                    id="incomeBtn"
-                >
-                    💰 Income
-                </button>
-
-
-                <button
-                    type="button"
-                    class="type-btn"
-                    id="expenseBtn"
-                >
-                    💸 Expense
-                </button>
-
-            </div>
-
-
-
-            <!-- STEP 2: FORM -->
-
-            <div class="form-section">
-
-                <h2>
-                    Add Transaction
-                </h2>
-
-
-                <form id="transactionForm">
-
-
-                    <!-- TRANSACTION NAME -->
-
-                    <label for="transactionName">
-                        Transaction Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="transactionName"
-                        placeholder="Enter transaction name"
-                    />
-
-                    <p id="transactionError"></p>
-
-
-
-                    <!-- AMOUNT -->
-
-                    <label for="amount">
-                        Amount
-                    </label>
-
-                    <input
-                        type="number"
-                        id="amount"
-                        placeholder="Enter transaction amount"
-                    />
-
-                    <p id="amountError"></p>
-
-
-
-                    <!-- CATEGORY -->
-
-                    <label for="category">
-                        Category
-                    </label>
-
-                    <select id="category">
-
-                        <option value="">
-                            Select category
-                        </option>
-
-                    </select>
-
-                    <p id="categoryError"></p>
-
-
-
-                    <!-- SUBMIT -->
-
-                    <button
-                        type="submit"
-                        class="submit-btn"
-                    >
-                        Add Transaction
-                    </button>
-
-                </form>
-
-            </div>
-
+          <button type="button" class="type-btn" id="expenseBtn">
+            💸 Expense
+          </button>
         </div>
 
+        <!-- STEP 2: FORM -->
+
+        <div class="form-section">
+          <h2>Add Transaction</h2>
+
+          <form id="transactionForm">
+            <!-- TRANSACTION NAME -->
+
+            <label for="transactionName"> Transaction Name </label>
+
+            <input
+              type="text"
+              id="transactionName"
+              placeholder="Enter transaction name"
+            />
+
+            <p id="transactionError"></p>
+
+            <!-- AMOUNT -->
+
+            <label for="amount"> Amount </label>
+
+            <input
+              type="number"
+              id="amount"
+              placeholder="Enter transaction amount"
+            />
+
+            <p id="amountError"></p>
+
+            <!-- CATEGORY -->
+
+            <label for="category"> Category </label>
+
+            <select id="category">
+              <option value="">Select category</option>
+            </select>
+
+            <p id="categoryError"></p>
+
+            <!-- SUBMIT -->
+
+            <button type="submit" class="submit-btn">Add Transaction</button>
+          </form>
+        </div>
+      </div>
     </div>
-
-
 
     <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
-
-</body>
-
+  </body>
 </html>
